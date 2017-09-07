@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: isign
+Version: 1.6.15.1502865778.dev2+root
+Summary: Re-signing iOS apps without Apple tools
+Home-page: https://github.com/saucelabs/isign
+Author: Sauce Labs
+Author-email: dev@saucelabs.com
+License: UNKNOWN
+Download-URL: https://github.com/saucelabs/isign/tarball/v1.6.15.1502865778.dev2+root
+Description: UNKNOWN
+Keywords: ios,app,signature,codesign,sign,resign
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7

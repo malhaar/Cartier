@@ -1,0 +1,10 @@
+keyChains:
+ - keys: '/Users/ive/Library/Keychains/t-one.keychain-db'
+   items:
+    - 'Mac Developer: 维 徐 (RJVQS581MT)'
+    - 'iPhone Developer: 维 徐 (RJVQ1583MT)'
+
+ - keys: '/Users/ive/Library/Keychains/login.keychain-db'
+   items:
+    - 'iPhone Developer: Mingjun Lee (XGBQ1MQ39P)'
+    - 'iPhone Distribution: Jiangsu Changshu Rural Commercial Bank Co., Ltd'

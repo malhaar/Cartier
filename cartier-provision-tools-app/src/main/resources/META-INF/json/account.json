@@ -1,0 +1,9 @@
+// Accounts json DEMO
+[
+  {
+    "u": "Apple Account Username",
+    "p": "Apple Account Password",
+    "pn": "Apple Profile Name, Default: pyw",
+    "an": "Apple AppId Name, Default: pyw"
+  }
+]

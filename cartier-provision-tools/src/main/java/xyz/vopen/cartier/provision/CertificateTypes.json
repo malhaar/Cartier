@@ -1,0 +1,288 @@
+{
+  "Development": [
+    {
+      "id": "5QPB9NHCEI",
+      "type": "development",
+      "title": "iOS App Development",
+      "description": "Sign development versions of your iOS app.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.development.create",
+        "accessAllowed": true
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "BKLRAVXMGM",
+      "type": "sandbox",
+      "title": "Apple Push Notification service SSL (Sandbox)",
+      "description": "Establish connectivity between your notification server and the Apple Push Notification service sandbox environment to deliver remote notifications to your app. A separate certificate is required for each app you develop.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.apns.development.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which App ID would you like to use?",
+        "description": "All App IDs that you want to enable for remote notifications require their own Apple Push Notification service SSL certificate. The App ID-specific SSL certificate allows your server to connect to the Apple Push Notification service. Note that only explicit App IDs with a specific Bundle Identifier can be used to create an Apple Push Notification service SSL certificate.",
+        "listTitle": "Select an App ID for your Apple Push Notification service SSL Certificate (Sandbox)",
+        "fieldTitle": "App ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "appIdId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    }
+  ],
+  "Production": [
+    {
+      "id": "R58UK2EWSO",
+      "type": "iosNoOCSP",
+      "title": "App Store and Ad Hoc",
+      "description": "Sign your iOS app for submission to the App Store or for Ad Hoc distribution.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.distribution.crl.create",
+        "accessAllowed": true
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "UPV3DW712I",
+      "type": "production",
+      "title": "Apple Push Notification service SSL (Sandbox & Production)",
+      "description": "Establish connectivity between your notification server, the Apple Push Notification service sandbox, and production environments to deliver remote notifications to your app. When utilizing HTTP/2, the same certificate can be used to deliver app notifications, update ClockKit complication data, and alert background VoIP apps of incoming activity. A separate certificate is required for each app you distribute.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.apns.unified.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which App ID would you like to use?",
+        "description": "All App IDs that you want to enable for remote notifications require their own Apple Push Notification service SSL certificate. The App ID-specific SSL certificate allows your server to connect to the Apple Push Notification service. Note that only explicit App IDs with a specific Bundle Identifier can be used to create an Apple Push Notification service SSL certificate.",
+        "listTitle": "Select an App ID for your Apple Push Notification service SSL Certificate (Sandbox & Production)",
+        "fieldTitle": "App ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "appIdId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "Y3B2F3TYSI",
+      "type": "passtype",
+      "title": "Pass Type ID Certificate",
+      "description": "Sign and send updates to passes in Wallet.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.pass.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which Pass Type ID would you like to use?",
+        "description": "Each Pass Type ID you identify within your app will require its own individual Pass Certificate. This certificate allows your notification server to connect to the Pass Type service.",
+        "listTitle": "Select a Pass Type ID for your Pass Certificate",
+        "fieldTitle": "Pass Type ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "passTypeId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "3T2ZP62QW8",
+      "type": "WEBSITEPUSH",
+      "title": "Website Push ID Certificate",
+      "description": "Sign and send updates for Websites.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.webpush.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which Website Push ID would you like to use?",
+        "description": "Each Website Push ID you register will require its own individual Website Push Certificate. This certificate allows your notification server to connect to the Website Push service.",
+        "listTitle": "Select a Website Push ID for your Website Push Certificate",
+        "fieldTitle": "Website Push ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "websitePushId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "FGQUP4785Z",
+      "type": "watchKit",
+      "title": "WatchKit Services Certificate",
+      "description": "Establish connectivity between your notification server, the Apple Push Notification service sandbox, and production environment to update ClockKit complication data. When utilizing HTTP/2, the same certificate can be used to deliver app notifications, update ClockKit complication data, and alert background VoIP apps of incoming activity. A separate certificate is required for each app you distribute.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.watchkit.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which App ID would you like to use?",
+        "description": "Each app you want to use WatchKit Services requires its own individual WatchKit Services certificate. The App ID-specific WatchKit Services certificate allows your notification server to connect to the WatchKit Service. Note that only explicit App IDs with a specific Bundle Identifier can be used to create a WatchKit Service Certificate.",
+        "listTitle": "Select an App ID for your WatchKit Service Certificate",
+        "fieldTitle": "App ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "appIdId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "E5D663CMZW",
+      "type": "VOIPPUSH",
+      "title": "VoIP Services Certificate",
+      "description": "Establish connectivity between your notification server, the Apple Push Notification service sandbox, and production environment to alert background VoIP apps of incoming activity. A separate certificate is required for each app you distribute.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.voip.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which App ID would you like to use?",
+        "description": "Each app you want to use with VoIP Services requires its own individual VoIP Services certificate. The App ID-specific VoIP Services certificate allows your notification server to connect to the VoIP Service. Note that only explicit App IDs with a specific Bundle Identifier can be used to create a VoIP Service Certificate.",
+        "listTitle": "Select an App ID for your VoIP Service Certificate",
+        "fieldTitle": "App ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "appIdId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body.html"
+      }
+    },
+    {
+      "id": "4APLUP237T",
+      "type": "OmcId",
+      "title": "Apple Pay Certificate",
+      "description": "Decrypt app transaction data sent by Apple to a merchant/developer.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.applepay.ecc.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which Merchant ID would you like to use?",
+        "description": "Each Merchant ID you identify within your app will require its own individual Apple Pay Certificate. The certificate is used by Apple to encrypt transaction data sent by Apple back to the merchant.",
+        "listTitle": "Select a Merchant ID for your Apple Pay Certificate",
+        "fieldTitle": "Merchant ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "omcId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body_apc.html"
+      }
+    },
+    {
+      "id": "T44PTHVNID",
+      "type": "OmcId",
+      "title": "Apple Pay Certificate",
+      "description": "Decrypt app transaction data sent by Apple to a merchant/developer.",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.applepay.rsa.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which Merchant ID would you like to use?",
+        "description": "Each Merchant ID you identify within your app will require its own individual Apple Pay Certificate. The certificate is used by Apple to encrypt transaction data sent by Apple back to the merchant.",
+        "listTitle": "Select a Merchant ID for your Apple Pay Certificate",
+        "fieldTitle": "Merchant ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "omcId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body_apck.html"
+      }
+    },
+    {
+      "id": "MD8Q2VRT6A",
+      "type": "OmcId",
+      "title": "Merchant Identity Certificate",
+      "description": "A client TLS certificate that is used to authenticate you to Apple Pay Servers",
+      "enabled": true,
+      "permission": {
+        "permission": "team.certificate.ios.warsaw.create",
+        "accessAllowed": true
+      },
+      "identifier": {
+        "title": "Which Merchant ID would you like to use?",
+        "description": "Each Merchant ID you identify within your app will require its own individual Merchant Identity Certificate. The certificate is used is used to authenticate you to Apple Pay servers.",
+        "listTitle": "Select a Merchant ID for your Merchant Identity Certificate",
+        "fieldTitle": "Merchant ID:",
+        "fieldURL": "/identifiers/listAvailableIdentifiersByCertType",
+        "fieldName": "omcId",
+        "fieldIdPath": "identifierList.displayId",
+        "fieldTextPath": [
+          "prefix",
+          "identifier"
+        ]
+      },
+      "CSR": {
+        "title": "About Creating a Certificate Signing Request (CSR)",
+        "body": "/data/csr_body_apcm.html"
+      }
+    }
+  ]
+}
