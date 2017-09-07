@@ -3,6 +3,11 @@
 </h3>
 
 # Cartier Development Framework
+[![Maven Central](https://img.shields.io/badge/release-1.1.0--RELEASE-blue.svg)](https://github.com/CiNC0/Cartier)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/CiNC0/Cartier)
+[![Coveralls](https://img.shields.io/coveralls/jekyll/jekyll.svg)]([![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/CiNC0/Cartier))
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/@ytuaebi)
+
 > Java Distribution Framework , Provide Common-utils ,Like : Database operation , Memcached Utils ,Redis Utils, Classified Logger ,Apple iOS Security Kit ,Apple-Development-Account kit,Java Application Surface kit to build jvm-application.
 
 
