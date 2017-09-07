@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-parent</artifactId>
+        <version>1.1.0-RELEASE</version>
+        <relativePath>pom-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>pom-modules</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Cartier Project</name>
+    <description>Java Distribution Framework , Provide Common-utils ,
+        Like : Database operation , Memcached Utils ,Redis Utils, Classified Logger ,Apple iOS Security Kit ,
+        Apple-Development-Account kit,Java Application Surface kit to build jvm-application.
+    </description>
+    <url>http://vopen.xyz</url>
+
+    <organization>
+        <name>CiNC0</name>
+        <url>https://github.com/CiNC0</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>misselvexu</id>
+            <name>Elve Xu</name>
+        </developer>
+    </developers>
+
+    <mailingLists>
+        <mailingList>
+            <name>Elve.xu</name>
+            <post>iskp.me@gmail.com</post>
+        </mailingList>
+    </mailingLists>
+
+    <properties>
+        <skip_maven_deploy>true</skip_maven_deploy>
+    </properties>
+
+    <scm>
+        <connection>scm:git:http://192.168.20.36/v2/cartier.git</connection>
+        <developerConnection>scm:git:http://192.168.20.36/v2/cartier.git</developerConnection>
+        <url>http://192.168.20.36/v2/cartier</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <modules>
+        <!-- parent pom project -->
+        <module>pom-parent</module>
+
+        <!-- cartier common utils project  -->
+        <module>cartier-commons</module>
+
+        <!-- classified logger framework , support multi threads loggers -->
+        <module>cartier-classified-logger</module>
+
+        <!-- monitor for business , //TODO -->
+        <module>cartier-monitor-progress</module>
+
+        <!-- Java Application Surface Framework for Project -->
+        <module>cartier-surface</module>
+
+        <!-- Spring Support -->
+        <module>cartier-spring</module>
+
+        <!-- pyw jdbc operator tools over mysql -->
+        <module>cartier-database-jdbc</module>
+
+        <!-- Apple Provision Operator Tools for iOS -->
+        <module>cartier-provision-tools</module>
+
+        <!-- CDN support -->
+        <module>cartier-cdn</module>
+
+        <!-- Java VM Classpath Scanner Lib -->
+        <module>cartier-classpath-scanner</module>
+
+        <!-- Memcached Support -->
+        <module>cartier-mcd</module>
+
+        <!-- Redis Support -->
+        <module>cartier-redis</module>
+
+        <!-- iOS Re-Sign Libs -->
+        <module>cartier-ios-resign-parent/cartier-ios-resign</module>
+
+        <!-- CDN Command Tools for Developers -->
+        <module>cartier-cdn-runnable</module>
+
+        <!-- ext tools -->
+        <module>cartier-provision-tools-app</module>
+
+    </modules>
+
+</project>
