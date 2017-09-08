@@ -51,9 +51,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:http://192.168.20.36/v2/cartier.git</connection>
-        <developerConnection>scm:git:http://192.168.20.36/v2/cartier.git</developerConnection>
-        <url>http://192.168.20.36/v2/cartier</url>
+        <connection>scm:git:https://github.com/CiNC0/Cartier.git</connection>
+        <developerConnection>scm:git:https://github.com/CiNC0/Cartier.git</developerConnection>
+        <url>https://github.com/CiNC0/Cartier</url>
         <tag>HEAD</tag>
     </scm>
 
