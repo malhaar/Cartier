@@ -676,9 +676,63 @@ Enjoy it!
 
 
 
-## Binaries
-```
-    // TODO
+## Binaries And Maven
+```xml
+
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-provision-tools</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-commons</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-database-jdbc</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-mcd</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-redis</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-surface</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-spring</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-classpath-scanner</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>xyz.vopen.cartier</groupId>
+        <artifactId>cartier-ios-resign</artifactId>
+        <version>RELEASE</version>
+    </dependency>
+    
 ``` 
 
 
