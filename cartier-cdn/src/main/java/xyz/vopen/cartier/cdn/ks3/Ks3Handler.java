@@ -194,6 +194,8 @@ public class Ks3Handler implements CDNHandler {
 
                 FileInputStream inputStream = new FileInputStream(file);
                 PutObjectRequest request = new PutObjectRequest(bucket, relativePathKey, inputStream, meta);
+                // set file read public
+                request.setCannedAcl(CannedAccessControlList.PublicRead);
 
                 PutObjectResult putObjectResult = client.putObject(request);
                 logger.info(" @file upload finished ,Response is :{}", putObjectResult);
@@ -343,7 +345,6 @@ public class Ks3Handler implements CDNHandler {
                     // ============ UPLOAD BLOCK FINISHED ,COMBINE BLOCKS ==========
                     CompleteMultipartUploadRequest completeMultipartUploadRequest = new CompleteMultipartUploadRequest(bucket, relativePathKey, uploadId, parts);
                     CompleteMultipartUploadResult completeMultipartUploadResult = client.completeMultipartUpload(completeMultipartUploadRequest);
-
                     logger.info(" @Blocks combine finished ,Response :{}", completeMultipartUploadResult);
 
                 } catch (Exception e) {
