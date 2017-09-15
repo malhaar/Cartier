@@ -50,7 +50,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 证书处理工具
+ * Provision processor
  *
  * @author Elve.xu [xuhw@yyft.com]
  * @version v1.2 - 12/07/2017.
@@ -67,14 +67,14 @@ public final class ProvisionProcessor {
     // @@@:on
 
     /**
-     * 设备类型
+     * Device types
      */
     public enum Device {
         iphone, ipad, ipod, tvOS, watch
     }
 
     /**
-     * 处理类
+     * provision processor handler
      */
     public static class ProvisionHandler {
         // @@@:off
@@ -111,8 +111,8 @@ public final class ProvisionProcessor {
 
 
                 if (headerHolder.containsKey("csrf") && headerHolder.containsKey("csrf_ts")) {
-                    logger(i, "@最新的csrf = {}", headerHolder.get("csrf"));
-                    logger(i, "@最新的csrf_ts = {}", headerHolder.get("csrf_ts"));
+                    logger(i, "@least csrf = {}", headerHolder.get("csrf"));
+                    logger(i, "@least csrf_ts = {}", headerHolder.get("csrf_ts"));
                 }
             }
         }
@@ -121,7 +121,7 @@ public final class ProvisionProcessor {
         }
 
 
-        //**************************************业务逻辑方法*******************************************//
+        //**************************************Methods*******************************************//
 
         public Result login (String username, String password) {
             try {
@@ -144,7 +144,7 @@ public final class ProvisionProcessor {
         }
 
         /**
-         * 注销账号下的证书
+         * Revoke Apple Account
          * <pre>
          *     <p>1.revoke certs</p>
          *     <p>2.delete appIds</p>
@@ -256,10 +256,10 @@ public final class ProvisionProcessor {
             return Result.DefaultResult.FAIL;
         }
 
-        //********************************公共处理方法**************************************//
+        //********************************Methods**************************************//
 
         /**
-         * 第一步: 预登陆操作
+         * First : pre-Login
          */
         private Result requestPreLogin () throws PreLoginException, RequestException {
 
@@ -2285,7 +2285,7 @@ public final class ProvisionProcessor {
     }
 
     /**
-     * 工具类
+     * Utils
      */
     private static class Utils {
         /**

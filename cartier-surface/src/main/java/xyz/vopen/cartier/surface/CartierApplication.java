@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 抽象主程序
+ * Abstract Main Application
  *
  * @author Elve.xu [xuhw@yyft.com]
  * @version v1.0 - 15/02/2017.
@@ -103,7 +103,7 @@ public abstract class CartierApplication {
      * </pre>
      *
      * @param args
-     *         程序执行参数
+     *         args
      */
     protected static <T extends CartierApplication> void run (String[] args, Class<T> clazz) {
 
@@ -271,7 +271,7 @@ public abstract class CartierApplication {
     public abstract void init (CartierApplicationContext context) throws Exception;
 
     /**
-     * 程序运行
+     * start method
      *
      * @throws Exception
      *         exception
@@ -279,7 +279,7 @@ public abstract class CartierApplication {
     public abstract void start (CartierApplicationContext context) throws Exception;
 
     /**
-     * 程序停止
+     * shutdown method
      *
      * @throws Exception
      *         exception

@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * Spring 自定义配置文件
+ * Spring Customer Configurer
  *
- * @author Elve.xu [xuhw@yyft.com]
+ * @author Elve.xu [iskp.me@gmail.com]
  * @version v1.0 - 09/03/2017.
  */
 public class PropertyPlaceholderConfigurer extends org.springframework.beans.factory.config.PropertyPlaceholderConfigurer {

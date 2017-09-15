@@ -26,7 +26,7 @@ import java.sql.Connection;
 import java.util.logging.Logger;
 
 /**
- * jdbc数据库操作支持类
+ * JdbcDaoSupport for spring
  *
  * @author Hongvi Xu
  */

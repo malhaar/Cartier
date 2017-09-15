@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * 数据库连接池(基于Tomcat Jdbc Pool)
+ * Cartier datasource base on tomcat Jdbc Pool
  *
  * @author Elve.xu [xuhw@yyft.com]
  * @version v1.0 - 24/02/2017.
@@ -115,55 +115,48 @@ public class CartierDataSource implements FactoryBean<DataSource>, InitializingB
         String url = connectorProperties.getProperty("jdbc.url");
         ds.setUrl(url);
 
-        logger.debug("数据库连接池正在启动: {}", url);
+        logger.debug("Database Connection URL: {}", url);
 
         String username = connectorProperties.getProperty("jdbc.username", "");
         ds.setUsername(username);
         String password = connectorProperties.getProperty("jdbc.password", "");
         ds.setPassword(password);
 
-        // 池启动时创建的连接数量
         int initialSize = Integer.parseInt(connectorProperties.getProperty("jdbc.initial_size", "5"));
         ds.setInitialSize(initialSize);
-        logger.debug("池启动时创建的连接数量: {}", initialSize);
+        logger.debug("Database Connection Initial Size: {}", initialSize);
 
-        // 同一时间可以从池分配的最多连接数量
         int maxActive = Integer.parseInt(connectorProperties.getProperty("jdbc.max_active", "15"));
         ds.setMaxActive(maxActive);
-        logger.debug("同一时间可以从池分配的最多连接数量: {}", maxActive);
+        logger.debug("Database Connection Max Active Size : {}", maxActive);
 
-        // 池里不会被释放的最多空闲连接数量
         int maxIdle = Integer.parseInt(connectorProperties.getProperty("jdbc.max_idle", "10"));
         ds.setMaxIdle(maxIdle);
-        logger.debug("池里不会被释放的最多空闲连接数量: {}", maxIdle);
+        logger.debug("Database Connection Max Idle size : {}", maxIdle);
 
-        // 在不新建连接的条件下, 池中保持空闲的最少连接数
         int minIdle = Integer.parseInt(connectorProperties.getProperty("jdbc.min_idle", "5"));
         ds.setMinIdle(minIdle);
-        logger.debug("在不新建连接的条件下, 池中保持空闲的最少连接数: {}", minIdle);
+        logger.debug("Database Connection Min Idle size : {}", minIdle);
 
-        // 在抛出异常之前, 池等待连接被回收的最长时间
         int maxWait = Integer.parseInt(connectorProperties.getProperty("jdbc.max_wait", "10000"));
         ds.setMaxWait(maxWait);
-        logger.debug("在抛出异常之前, 池等待连接被回收的最长时间: {}", maxWait);
+        logger.debug("Database Connection Max Wait timeout: {}", maxWait);
 
-        // 超过removetime后, 是否进行没用连接废弃, 默认为true
         boolean removeAbandoned = Boolean
                 .parseBoolean(connectorProperties.getProperty("jdbc.remove_abandoned", "true"));
         ds.setRemoveAbandoned(removeAbandoned);
-        logger.debug("超过指定之间后, 是否进行没用连接废弃: {}", removeAbandoned);
+        logger.debug("Is Enabled Connection Remove Abandoned: {}", removeAbandoned);
 
-        // 超时时间限制
         int removeAbandonedTimeout = Integer
                 .parseInt(connectorProperties.getProperty("jdbc.remove_abandoned_timeout", "180"));
         ds.setRemoveAbandonedTimeout(removeAbandonedTimeout);
-        logger.debug("移除没用连接超时时间: {}", removeAbandoned);
+        logger.debug("Connection Remove Abandoned Timeout : {}", removeAbandoned);
 
-        // 探测
+        // validate
         ds.setValidationQuery(connectorProperties.getProperty("jdbc.validation_query", "SELECT 1"));
-        // 从连接池获取连接时, 是否运行validationQuery, 默认为true
+        // validationQuery, default true
         ds.setTestOnBorrow(Boolean.parseBoolean(connectorProperties.getProperty("jdbc.test_on_borrow", "true")));
-        // 将连接归还连接池前是否运行validationQuery, 默认为false
+        // validationQuery, default false
         ds.setTestOnReturn(Boolean.parseBoolean(connectorProperties.getProperty("jdbc.test_on_return", "false")));
 
         datasource = ds;

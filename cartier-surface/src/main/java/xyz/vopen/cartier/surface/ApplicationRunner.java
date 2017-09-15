@@ -79,7 +79,7 @@ public class ApplicationRunner {
                                     break;
                                 }
                             }
-                            if (contain) { // application.properties 制定了运行的程序
+                            if (contain) { // application.properties assgin application
                                 String applicationClassName = tarry[1];
                                 if (applicationClassName != null && applicationClassName.length() > 0) {
                                     Class aClass = Class.forName(applicationClassName);
@@ -135,7 +135,7 @@ public class ApplicationRunner {
     };
 
     /**
-     * 默认的文件结构()
+     * default properties
      */
     private static String construct_of_assembly = "src/main/assembly";
     private static String construct_of_meta_inf_application = "resources/META-INF/xyz.vopen.cartier.surface.CartierApplication";

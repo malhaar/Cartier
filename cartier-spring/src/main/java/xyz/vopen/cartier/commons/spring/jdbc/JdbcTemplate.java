@@ -1,5 +1,5 @@
 /**
- * Copyright 2006-2015 pyw.cn
+ * Copyright 2006-2015 vopen.xyz
  * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,14 +29,14 @@ import java.util.List;
 import java.util.logging.Logger;
 
 /**
- * 数据库操作类
+ * JdbcTemplate for cartier
  *
- * @author Hongvi Xu
+ * @author Elve Xu
  */
 public class JdbcTemplate extends org.springframework.jdbc.core.JdbcTemplate {
 
     /**
-     * 数据库分页sql
+     * db page sql
      */
     public static final String PAGESQL = "select * from (select t1.*,rownum r from ( ${sql} )t1 )t2  where t2.r>=? and t2.r<=?";
     protected Logger logger = Logger.getLogger(JdbcTemplate.class.getName());
@@ -62,69 +62,82 @@ public class JdbcTemplate extends org.springframework.jdbc.core.JdbcTemplate {
     }
 
     /**
-     * 获取一个数据库连接，这个连接不需要关闭的，由Spring容器来管理
+     * Get Connection
      *
-     * @return
+     * @return connection instance
      */
     private Connection getConnection () {
         return DataSourceUtils.getConnection(this.getDataSource());
     }
 
     /**
-     * 获得分页sql
+     * page sql
      *
      * @param sql
-     * @return
+     *         sql
+     *
+     * @return page sql
      */
     public String getSqlForPage (String sql) {
         return PAGESQL.replace("${sql}", sql);
     }
 
     /**
-     * 使用反射得到指定对象信息
+     * Query for bean
      *
-     * @param sql          sql语句
-     * @param params       sql中所用到的参数
-     * @param requiredType 返回的具体类型，比如 Bean.class，返回就是Bean类型
-     * @return
+     * @param sql
+     *         sql
+     * @param params
+     *         sql params
+     * @param requiredType
+     *         class type
+     *
+     * @return Object
      */
     public Object queryForBean (String sql, Object[] params, Class requiredType) {
         return query(sql, params, new BeanHandler(requiredType));
     }
 
     /**
-     * 使用反射得到指定对象的List集合
+     * queryForBeanList
      *
-     * @param sql          sql语句
-     * @param params       sql中所用到的参数
-     * @param requiredType 返回的具体类型，比如 Bean.class，返回就是Bean类型
-     * @return
+     * @param sql
+     *         sql
+     * @param params
+     *         sql params
+     * @param requiredType
+     *         class type
+     *
+     * @return result list
      */
     public List queryForBeanList (String sql, Object[] params, Class requiredType) {
         return (List) query(sql, params, new BeanListHandler(requiredType));
     }
 
     /**
-     * 使用反射获取单个指定对象信息(注：这个用户不可以直接调用)
+     * query
      *
      * @param sql
+     *         sql
      * @param params
+     *         params
      * @param handler
-     * @return
+     *         ResultSetHandler
+     *
+     * @return result object
+     *
+     * @see ResultSetHandler
      */
     protected Object query (String sql, Object[] params, ResultSetHandler handler) {
         Connection conn = null;
         try {
             conn = getConnection();
-            // logger.info("dbutils.query方法获取一个数据库连接");
             return queryRunner.query(conn, sql, handler, params);
-//            return queryRunner.query(conn, sql, params, handler);
         } catch (SQLException t) {
-            System.out.println("调用反射方法错误：" + t.getMessage());
+            System.out.println("Reflection Error：" + t.getMessage());
             throw new DataIntegrityViolationException(t.getMessage());
         } finally {
             DataSourceUtils.releaseConnection(conn, this.getDataSource());
-            // logger.info("dbutils.query方法获关闭一个数据库连接");
         }
 
     }
@@ -133,21 +146,20 @@ public class JdbcTemplate extends org.springframework.jdbc.core.JdbcTemplate {
         Connection conn = null;
         try {
             conn = getConnection();
-            // logger.info("dbutils.batch方法获取一个数据库连接");
             return queryRunner.batch(conn, sql, params);
         } catch (SQLException t) {
             System.out.println(t.getMessage());
             throw new DataIntegrityViolationException(t.getMessage());
         } finally {
             DataSourceUtils.releaseConnection(conn, this.getDataSource());
-            // logger.info("dbutils.batch方法关闭一个数据库连接");
         }
     }
 
     /**
-     * 获取oracle SQL分页语句
+     * get page sql for oracle
      *
      * @param sql
+     *
      * @return
      */
     public String getPageSql (String sql) {
@@ -156,9 +168,10 @@ public class JdbcTemplate extends org.springframework.jdbc.core.JdbcTemplate {
     }
 
     /**
-     * 获取Mysql SQL分页语句
+     * get page sql for mysql
      *
      * @param sql
+     *
      * @return
      */
     public String getMySqlPageSql (String sql) {

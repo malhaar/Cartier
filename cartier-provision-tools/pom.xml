@@ -12,7 +12,7 @@
     <packaging>jar</packaging>
 
     <name>cartier-provision-tools</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/CiNC0/Cartier/tree/master/cartier-provision-tools</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
