@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.TYPE;
 
 /**
- * xyz.vopen.cartier.classified.logger
+ * Classified logger annotation
  *
  * @author Elve.xu [xuhw@yyft.com]
  * @version v1.0 - 10/08/2017.
@@ -20,47 +20,47 @@ import static java.lang.annotation.ElementType.TYPE;
 public @interface ClassifiedLogger {
 
     /**
-     * 日志类型,一般分类的日志类型(单独记录的日志文件)
+     * log type
      */
     String loggerType ();
 
     /**
-     * 日志文件
+     * assigned log file
      */
     String loggerFile ();
 
     /**
-     * 日志级别
+     * logger level
      */
     Level level () default Level.INFO;
 
     /**
-     * 是否继续传递
+     * is additive
      */
     boolean additive () default true;
 
     /**
-     * 分类存储的文件夹,不指定,系统将使用默认值: default path -> /var/log/${application}/${loggerType}/xxx.log
+     * log path: default path -> /var/log/${application}/${loggerType}/xxx.log
      */
     String directory () default ".";
 
     /**
-     * 日志格式
+     * formatter
      */
     String pattern () default DefaultValues.PATTERN;
 
     /**
-     * 是否开启异步处理
+     * asyn mode
      */
     boolean asyn () default false;
 
     /**
-     * 排序
+     * sortable
      */
     boolean sortable () default false;
 
     /**
-     * 排序超时时间(根据业务线程执行时间设定,默认为3分钟)
+     * sortable timeout for flush-disk (default :3min)
      */
     long timeout () default 3 * 60;
 }

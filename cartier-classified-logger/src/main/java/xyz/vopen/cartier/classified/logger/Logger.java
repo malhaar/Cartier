@@ -27,26 +27,26 @@ public final class Logger {
     private volatile boolean builded = false;
 
     /**
-     * 刷新日志
+     * flush method
      */
     public void flush (Object caller) {
         ClassifiedContext.getClassifiedContext().flush(caller);
     }
 
     /**
-     * 记录日志方法
+     * recode logger info
      *
      * @param formatContent
-     *         文本内容
+     *         content with format
      * @param values
-     *         值
+     *         args
      */
     public void info (String formatContent, Object... values) {
         info(null, formatContent, values);
     }
 
     /**
-     * 记录日志方法
+     * recode logger info
      *
      * @param caller
      *         caller
@@ -73,10 +73,10 @@ public final class Logger {
     }
 
     /**
-     * 记录日志内容
+     * recode logger info
      *
      * @param content
-     *         内容
+     *         real content
      */
     private void log (Object caller, String content) {
 
