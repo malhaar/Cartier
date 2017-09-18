@@ -23,6 +23,7 @@
 - Apple Re-Sign on macOS (Java)
 - Apple Re-Sign on Linux (Python)
 - CDN Support (list: ks3, aliyun)
+- Classified Logger Support (New)
 
 ## Commons Modules
 - Linux Command Tools
@@ -671,6 +672,25 @@ Enjoy it!
             "an": "Apple AppId Name, Default: pyw"
         }
     ]
+
+```
+
+
+
+#### How to use Classified Logger Support
+
+> Multi-Threads Sortable Logger
+
+```java
+
+    @ClassifiedLogger(
+            loggerType = "logger-type-demo", 
+            additive = false, 
+            asyn = true, 
+            loggerFile = "mt-1", 
+            timeout = 3)
+    @AutoSortable
+    private static class InvokerClassRunnable implements Runnable;
 
 ```
 
