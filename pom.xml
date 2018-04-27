@@ -102,6 +102,7 @@
 
         <!-- ext tools -->
         <module>cartier-provision-tools-app</module>
+        <module>cartier-rudp</module>
 
     </modules>
 
